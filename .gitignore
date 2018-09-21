@@ -67,7 +67,6 @@ Temporary Items
 #########
 
 # Logs
-logs
 *.log
 npm-debug.log*
 
