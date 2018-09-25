@@ -1,2 +1,5 @@
 21-09-2018
 thijs en ik hebben samen (in buddy code formatie) een begin gemaakt aan het scrapen van airbnb. wij hebben de urls ge genereerd en de eerste paginas gedownload. ook hebben we de json geparsed en uit gezocht.
+
+25-09-2018
+onderzoek gedaan naar wat de amenities ids zijn en een tool geschreven die deze ophaalt een in een json bestant zet.
