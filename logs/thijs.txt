@@ -1,0 +1,10 @@
+21-09-2018
+Samen met Wouter bezig geweest de webscraper voor airbnb data te bouwen in de vorm van buddy programmeren. Hieruit is een basis ontstaan om 1 enkele pagina op te halen te parsen in JSON.
+~ 3 uur
+
+21-09-2018
+Bezig geweest om mij verder te verdiepen in JavaScript zodat ik verder kon met de scraper.
+~ 2 uur
+
+25-09-2018
+Javascript
