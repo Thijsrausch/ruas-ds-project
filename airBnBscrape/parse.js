@@ -7,7 +7,7 @@ const parse = (data) => {
     const listing = r.listing;
     const price = r.pricing_quote;
 
-    console.log(JSON.stringify(listing));
+    console.log(JSON.stringify(r));
 
     return {
       room_type: listing['room_type'],
