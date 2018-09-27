@@ -3,3 +3,6 @@ thijs en ik hebben samen (in buddy code formatie) een begin gemaakt aan het scra
 
 25-09-2018
 onderzoek gedaan naar wat de amenities ids zijn en een tool geschreven die deze ophaalt een in een json bestant zet.
+
+27-09-2018
+veel meer amenty ids gevonden en een funcie geschreven voor het wegschrijven van de data
