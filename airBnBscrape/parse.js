@@ -36,6 +36,8 @@ const parse = (data) => {
       user_id: listing['user']['id'],
       amenity_ids: listing['amenity_ids'],
 
+      name: listing['name'],
+
       price: price["rate"]["amount"],
       currency: price["rate"]["currency"],
       rate_type: price["rate_type"],
