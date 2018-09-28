@@ -8,9 +8,16 @@ const writeFile = require('./writeFile');
 (async () => {
   const urlList = generateUrlList();
 
-  const jsonDownload = await downloader(urlList[0]);
-  const data = parse(jsonDownload);
-
+  const jsonDownload = await Promise.all(
+    R.map((r) => downloader(r).catch((someting) => {
+      console.log('the download for url', r, 'caught');
+      console.log(someting)
+      return undefined
+    }), urlList)
+  );
+  const cleanedJsonDownload = R.reject(R.isNil, R.flatten(jsonDownload));
+  console.log(cleanedJsonDownload);
+  const data = R.map((r) => parse(r), cleanedJsonDownload);
 
   writeFile(data)
 })().catch((err) => {
