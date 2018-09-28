@@ -6,3 +6,6 @@ onderzoek gedaan naar wat de amenities ids zijn en een tool geschreven die deze 
 
 27-09-2018
 veel meer amenty ids gevonden en een funcie geschreven voor het wegschrijven van de data
+
+28-09-2018
+vandaag heb ik gewerk aan het maken van de pagination downloader en ik heb de eerste verhulling van de scraper gemaakt door verschilende user agents te gebruiken en een wilikeurig hoveelheid tijd te wachten.
