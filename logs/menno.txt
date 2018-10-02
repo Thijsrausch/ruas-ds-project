@@ -1,0 +1,7 @@
+28-09-2018
+Controleren JSON-data Wouter, begin aan R-file voor het verwerken van JSON-data naar R
+3 uur
+
+2-10-2018
+Zoeken naar additionele data op AirBnB-website (namen behoren bij amenity-ID's zijn te vinden in bron)
+2 uur
