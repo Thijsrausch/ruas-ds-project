@@ -9,9 +9,9 @@ const writeFile = require('./writeFile').writeFileJson;
   const urlList = generateUrlList();
 
   const jsonDownload = await Promise.all(
-    R.map((r) => downloader(r).catch((someting) => {
+    R.map((r) => downloader(r).catch((something) => {
       console.log('the download for url', r, 'caught');
-      console.log(someting);
+      console.log(something);
       return undefined
     }), urlList)
   );

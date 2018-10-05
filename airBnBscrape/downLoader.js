@@ -21,7 +21,7 @@ const downloader = async (url) => {
     console.log('getting:', options.uri);
     return await request(options);
   }catch (err) {
-    console.error('receved error: ', err.statusCode);
+    console.error('received error: ', err.statusCode);
     console.error('while getting: ', options.uri)
   }
 };
