@@ -1,13 +1,25 @@
 const fs = require('fs');
+const csvConvert = require('./converter');
 
-
-const writeFile = (data) => {
-  try{  fs.mkdirSync('./generated/');} catch(err){
-    console.error("I think the directory already exists");
-    // console.error(err);
+const makeGeneratedDir = () => {
+  try {
+    fs.mkdirSync('./generated/');
+  } catch (err) {
+    console.error('I think the directory already exists');
   }
-  fs.writeFileSync('./generated/data.json', JSON.stringify(data));
-
 };
 
-module.exports = writeFile;
+const writeFileJson = (data) => {
+  makeGeneratedDir();
+  fs.writeFileSync('./generated/data.json', JSON.stringify(data));
+};
+
+const writeFileCsv = (data) => {
+  makeGeneratedDir();
+  fs.writeFileSync('./generated/data.csv', csvConvert(data));
+};
+
+module.exports = {
+  writeFileJson,
+  writeFileCsv
+};
