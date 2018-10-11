@@ -2,14 +2,11 @@ const request = require('request-promise');
 const userAgents = require('user-agent-array');
 
 const getRandomFromArray = require('./utils/getRandomFromArray');
-const delay = require('./utils/delay');
+const randomDelay = require('./utils/randomDelay');
 
 const downloader = async (url) => {
-  //wait a random time so we don't get cought
-  const msInSec = 1000; //ms
-  const maxRandomWait = 60; //sec
-  const minWait = 1; //sec
-  await delay((Math.random() * msInSec * maxRandomWait) + minWait * msInSec);
+  
+  await randomDelay(1, 60);
 
   const options = {
     method: 'GET',
@@ -24,7 +21,7 @@ const downloader = async (url) => {
     console.log('getting:', options.uri);
     return await request(options);
   }catch (err) {
-    console.error('receved error: ', err.statusCode);
+    console.error('received error: ', err.statusCode);
     console.error('while getting: ', options.uri)
   }
 };
