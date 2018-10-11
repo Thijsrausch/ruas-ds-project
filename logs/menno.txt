@@ -5,3 +5,15 @@ Controleren JSON-data Wouter, begin aan R-file voor het verwerken van JSON-data 
 2-10-2018
 Zoeken naar additionele data op AirBnB-website (namen behoren bij amenity-ID's zijn te vinden in bron)
 2 uur
+
+3-10-2018
+Start zoeken historische data recent/archive.org
+8 uur
+
+9-10-2018
+Exploratie dataset historische AirBnB Amsterdam
+2 uur
+
+11-10-2018
+Verder zoeken historische data
+2 uur
