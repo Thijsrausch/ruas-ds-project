@@ -1,0 +1,9 @@
+Historische data AirBnB:
+
+Er zijn verschillende manieren om achter historische data te komen van AirBnB in Rotterdam en Amsterdam. Met de Wayback Machine (web.archive.org), kan oude websitedata die gecaptured is, worden verkregen. De website van AirBnB is vrijwel elke dag gecaptured, hiermee kan via de homepage worden gezocht hoe wordt gelinkt naar populaire steden zoals Parijs en New York. Hiervanuit kan worden gezocht naar oude listings in Amsterdam en Rotterdam.
+
+Vanuit deze data kwamen twee archive links: http://airbnb.com:80/travel/amsterdam/nl en https://www.airbnb.com/s/Amsterdam--Netherlands, Rotterdam idem. Hiervoor zijn meer dan 500 archiveringen. Echter is dit veelal de eerste pagina en het bevat ook listings van steden buiten Amsterdam en Rotterdam. Uiteindelijk blijkt de Internet Archive niet bruikbaar genoeg om historische data te verkrijgen.
+
+Inside-AirBnb (http://insideairbnb.com/get-the-data.html) heeft historische data van grote steden sinds 2015. Enkel voor Amsterdam is deze informatie beschikbaar; listings en reviews zijn beschikbaar per stadsdeel. De data is opgeschoond en publiek beschikbaar. Voor het vergelijken van verschillende datasets is deze AirBnB-data goed te gebruiken.
+
+Hiernaast is er op de website van Statista data beschikbaar over het aantal boekingen in Rotterdam per jaar sinds 2010. Data sources voor deze websites zijn echter niet te bekijken zonder een premium account van 60 dollar per maand. Er zal naar een andere manier moeten worden gezocht om deze sources te verkrijgen
