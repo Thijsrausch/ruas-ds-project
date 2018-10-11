@@ -1,5 +1,3 @@
-// NB: merge this into index.js when done, this is for testing purposes only
-
 const R = require('ramda');
 
 const getBookingsUrls = require('./getBookingsUrls');
