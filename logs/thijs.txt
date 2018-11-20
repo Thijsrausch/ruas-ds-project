@@ -1,10 +1,69 @@
 21-09-2018
 Samen met Wouter bezig geweest de webscraper voor airbnb data te bouwen in de vorm van buddy programmeren. Hieruit is een basis ontstaan om 1 enkele pagina op te halen te parsen in JSON.
-~ 3 uur
 
 21-09-2018
 Bezig geweest om mij verder te verdiepen in JavaScript zodat ik verder kon met de scraper.
-~ 2 uur
 
 25-09-2018
-Javascript
+Verder verdiepen in Javascript.
+
+28-09-2018
+Verder verdiepen in Javascript.
+
+01-10-2018
+Begonnen met Javascript code van Wouter doornemen om te begrijpen hoe we de beschikbaarheidsdata van AirBnB listings kunnen scrapen.
+
+02-10-2018
+Begonnen met getBookingsUrl om de beschikbaarheidsdata te kunnen scrapen. Wouter heeft hierbij geholpen in de vorm van buddy programmeren.
+
+03-10-2018
+downloadBookings & getBookingsUrl
+
+04-10-2018
+downloadBookings & getBookingsUrl
+
+05-10-2018
+getBookingsUrl afgerond.
+
+8-10-2018
+Contact gezocht met gemeente rotterdam en rtv rijnmond voor samenwerking project. Hierop geen reactie.
+
+8-10-2018
+Begonnen met parseBookings om beschikbaarheidsinformatie te verwerken.
+
+11-10-2018
+project meeting: voortgang besproken en afspraken gemaakt.
+parseBookings afgemaakt en daarnaast getBooking afgemaakt zodat beschikbaarheidsdata gescraped kan worden.
+
+17-11-2018
+Project meeting: gebrainstormed over onderzoeksvragen en bepaald op welke onderzoeksvragen wij onze willen focussen.
+Bij deze onderzoeksvragen datasets bedacht waar naar gezocht moest worden en dit verdeeld over de groep. 
+
+18-11-2018
+Bezig geweest met R (shiny) voor persoonlijke opdracht en eindproduct project.
+
+22 -> 26 Oktober
+Vakantie; weinig activiteit anders dan gezocht naar datasets.
+
+29 -> 2
+Afspraken gemaakt over onze werkzaamheden tijdens tentamens zodat we verder kunnen na de tentames:
+datasets zoeken en paraat hebben zodat we verder kunnen met analyse na de tentamens.
+Tentamens + deadlines.
+
+5 -> 9 November
+Tentamens
+
+14-11-2018
+Project meeting: Afspraken gemaakt over uit te voeren werkzaamheden voor onze volgende meeting (en deze ook gepland).
+
+Data sets gezocht (wijken/buurten in rotterdam), log bijgewerkt, R visualisatie van datasets geprobeerd.
+Contact met wijkprofiel.rotterdam.nl voor de complete dataset van de wijkprofielen. Deze ook ontvangen.
+
+20-11-2018
+Begonnen met correlaties maken tussen wijk en prijs. Daarnaast andere visualisaties gemaakt over prijsverdeling, aantal listings en verdeling van listings over de stad.
+
+21-11-2018
+Project meeting: correlaties gedeeld.
+Verder gezocht naar data?
+
+
