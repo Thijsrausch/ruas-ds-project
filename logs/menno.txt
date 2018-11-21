@@ -17,3 +17,8 @@ Exploratie dataset historische AirBnB Amsterdam
 11-10-2018
 Verder zoeken historische data
 2 uur
+
+?
+Prijshistogrammen gemaakt van grote steden, onderzoek gedaan naar amenities, amenity-'scraper' gemaakt
+Scatterplot gemaakt van amenities Amsterdam, weinig correlatie (0.2)
+12 uur
