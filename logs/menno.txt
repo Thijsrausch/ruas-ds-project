@@ -22,3 +22,11 @@ Verder zoeken historische data
 Prijshistogrammen gemaakt van grote steden, onderzoek gedaan naar amenities, amenity-'scraper' gemaakt
 Scatterplot gemaakt van amenities Amsterdam, weinig correlatie (0.2)
 12 uur
+
+21-11-2018
+Achterhalen van belangrijkste amenities
+3 uur
+
+28-11-2018
+Beslisboom maken met de stof van les 1 voor amenities
+4 uur
