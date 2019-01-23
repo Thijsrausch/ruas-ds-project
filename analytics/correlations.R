@@ -1,6 +1,6 @@
 library(jsonlite)
 
-scrape <- fromJSON("airbnb-1.json")
+scrape <- fromJSON("airbnb-scrape-1.json")
 scrape_rotterdam <- scrape[!(scrape$city!="Rotterdam"),]
 set.seed(122)
 
@@ -11,7 +11,8 @@ cor(sqrt((51.9225 - scrape_rotterdam$latitude)^2 + (4.47917 - scrape_rotterdam$l
 bedrooms.c = scale(scrape_rotterdam$bedrooms, center = T, scale = F)
 bathrooms.c = scale(scrape_rotterdam$bathrooms, center = T, scale = F)
 summary(lm(price~bedrooms.c+bathrooms.c, scrape_rotterdam))
-
+plot(bedrooms.c)
+plot(bedrooms.c, scrape_rotterdam$price)
 
 # other correlations
 bedRoom.c = scale(scrape_rotterdam$bedrooms, center = T, scale = F)

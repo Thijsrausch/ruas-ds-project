@@ -6,7 +6,7 @@ library("sp")
 
 r_wijk <- readOGR('POLYGON.shp', layer='POLYGON')
 
-scrape <- fromJSON("airbnb-1.json")
+scrape <- fromJSON("airbnb-scrape-1.json")
 scrape_rotterdam <- scrape[scrape$city=="Rotterdam",]
 scrape_rotterdam_geo <- scrape_rotterdam
 
