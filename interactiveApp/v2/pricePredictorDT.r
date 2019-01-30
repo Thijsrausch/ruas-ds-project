@@ -1,5 +1,11 @@
-library(shiny)
-library(jsonlite)
+#install.packages("rpart")
+#install.packages("shiny")
+#install.packages("jsonlite")
+
+
+library("shiny")
+library("jsonlite")
+library("rpart")
 
 ui <- fluidPage(
   
@@ -30,10 +36,12 @@ scrape_rotterdam <- scrape[!(scrape$city!="Rotterdam"),]
 
 priceName <- c("<14", "14<52", "52<85", "85<125", "125<275", "275+")
 
+# ------ Linear model
 priceModelLinear <- lm(price~bedrooms+bathrooms+person_capacity, scrape_rotterdam)
 
-set.seed(43)
 
+# ------ dt model
+set.seed(43)
 determineClass <- function(price) {
   if (price < 14)
   {1}
@@ -53,7 +61,11 @@ for(row in 1:nrow(scrape_rotterdam)){
   scrape_rotterdam[row, "priceClass"] <- determineClass(scrape_rotterdam[row, "price"])
 }
 
-priceModelDT <- rpart(priceClass~person_capacity+bedrooms+bathrooms+beds, scrape_rotterdam_train, method="class")
+priceModelDT <- rpart(priceClass~person_capacity+bedrooms+bathrooms+beds, scrape_rotterdam, method="class")
+
+
+
+
 
 server <- function(input, output){
   
@@ -69,7 +81,8 @@ server <- function(input, output){
   predictDT <- eventReactive(input$predictButton, {
     inputData <- data.frame("person_capacity" = as.integer(input$persons), "bedrooms" = as.integer(input$bedrooms), "beds" = as.integer(input$beds), "bathrooms" = as.integer(input$bathrooms))
     prediction <- predict(priceModelDT, inputData, type="class")
-    priceName[as.integer(prediction)-1]
+    index <- as.numeric(prediction)-1
+    priceName[index]
   })
   
   output$listingPriceDT <- renderText(
