@@ -37,3 +37,8 @@ dtcModel <- lm(price ~ dtc(latitude,longitude), data=scrape_rotterdam)
 lines(sqrt((51.9225 - scrape_rotterdam$latitude)^2 + (4.47917 - scrape_rotterdam$longitude)^2), 
       predict(dtcModel, data=scrape_rotterdam), col='blue')
 summary(dtcModel)
+
+###########
+summary(lm(price~bedrooms+bathrooms+person_capacity+dtc(latitude,longitude), scrape_rotterdam))
+###########
+
