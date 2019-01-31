@@ -1,35 +1,35 @@
-install.packages("purrr")
-install.packages("rpart")
-install.packages("rpart.plot")
+#install.packages("purrr")
+#install.packages("rpart")
+#install.packages("rpart.plot")
 
 library(dplyr)
 library(jsonlite)
-library(dplyr)
-library(purrr)
+library("dplyr")
+library("purrr")
 
 library("rpart")
 library("rpart.plot")
-
+#install.packages("profvis")
+#library("profvis")
+#profvis({
 setwd('C:\\Users\\wouter\\Dropbox\\school\\AirBnBStatistics\\redoing')
 
 scrape <- fromJSON("./airbnb-scrape-1.json")
 scrape_rotterdam <- scrape[!(scrape$city!="Rotterdam"),]
-scrape_rotterdam <- scrape
+#scrape_rotterdam <- scrape
 
-boxplot(scrape_rotterdam$price)
-quantile(scrape_rotterdam$price)
+#boxplot(scrape_rotterdam$price)
+#quantile(scrape_rotterdam$price)
 
 
-amenities <- scrape_rotterdam$amenity_ids
-amenities <- unique(flatten(amenities))
+amenities <- unique(flatten(scrape_rotterdam$amenity_ids))
 
 
 
 for (row in 1:nrow(scrape_rotterdam)){
-  
+  amenities_list <- unlist(scrape_rotterdam[row,]$amenity_ids, use.names=FALSE)
   for (am in amenities) {
-    scrape_rotterdam[row, paste("amenity", am)] <- am %in% unlist(scrape_rotterdam[row,]$amenity_ids, use.names=FALSE)
-    
+    scrape_rotterdam[row, paste("amenity", am)] <- am %in% amenities_list
   }
   scrape_rotterdam
 }
@@ -90,3 +90,4 @@ scrape_rotterdam$space_type <- NULL
 
 dt_rotterdam <- rpart(priceClass~., scrape_rotterdam, method="class")
 rpart.plot(dt_rotterdam, extra=101)
+#})
