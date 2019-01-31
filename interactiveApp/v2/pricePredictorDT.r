@@ -46,7 +46,9 @@ ui <- fluidPage(
       h5("Amenities Decision Tree Output:"),
       textOutput(outputId = "amenityPriceDT"),
       h4("ensemble predicion:"),
-      textOutput(outputId = "ensemblePrice")
+      textOutput(outputId = "ensemblePrice"),
+      h5("naive distence:"),
+      textOutput(outputId = "distancePrice")
     )
   )
 )
@@ -103,6 +105,13 @@ amenities_scrape <- amenities_scrape %>% select(priceClass, amenity42, amenity5,
 amenitiesModelDT <- rpart(priceClass~., amenities_scrape, method="class")
 rpart.plot(amenitiesModelDT, extra=101)
 
+
+#---------- distance
+
+distance_scrape <- scrape_rotterdam %>% select(bathrooms, bedrooms, beds, person_capacity, price)
+
+
+# -------- output 
 liniarPrediction <- function(input) {
   inputData <- data.frame("person_capacity" = as.integer(input$persons), "bedrooms" = as.integer(input$bedrooms), "bathrooms" = as.integer(input$bathrooms))
   predict(priceModelLinear, inputData)  
@@ -131,6 +140,16 @@ amenitiesPrediction <- function(input) {
   )
   predict(amenitiesModelDT, inputData, type="class")
 }
+
+distancPredition <- function(input){
+  for(row in 1:nrow(distance_scrape)){
+    data <- distance_scrape[row,]
+    distance_scrape[row, "distance"] <- abs(data$bathrooms - as.integer(input$bathrooms) + data$bedrooms - as.integer(input$bedrooms) + data$beds - as.integer(input$beds) + data$person_capacity - as.integer(input$persons))
+  }
+  distance_scrape[distance_scrape$distance == min(distance_scrape$distance, na.rm=T), ]
+}
+
+# ----- real output
 
 ensemblePrediction <- function(input) {
   inputData <- data.frame("person_capacity" = as.integer(input$persons), "bedrooms" = as.integer(input$bedrooms), "beds" = as.integer(input$beds), "bathrooms" = as.integer(input$bathrooms))
@@ -189,6 +208,19 @@ server <- function(input, output){
   output$ensemblePrice <- renderText(
     predictEnsemble()
   )
+  
+  #-------------
+  
+  
+  predictDistance <- eventReactive(input$predictButton, {
+    prediction <- distancPredition(input)
+    paste("found mean price:", mean(prediction[,'price'], na.rm = T), " with distance ", mean(prediction[,'distance'], na.rm = T), ". min: ", min(prediction[,'price'], na.rm = T), "  max: ", max(prediction[,'price'], na.rm = T), sep = "")
+  })
+  
+  output$distancePrice <- renderText(
+    predictDistance()
+  )
+  
 }
 
 shinyApp(ui, server)
