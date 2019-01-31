@@ -12,30 +12,33 @@ library("rpart")
 
 ui <- fluidPage(
   
-  titlePanel("Airbnb Listing Price Predictor"),
+  titlePanel("AirBnB Listing Price Predictor"),
   
   sidebarLayout(
     
     sidebarPanel(
+      h3("Fill in the properties of your AirBnB"),
+      br(),
       textInput("persons", "Persons", NULL),
       textInput("bedrooms", "Bedrooms", NULL ),
       textInput("bathrooms", "Bathrooms", NULL ),
       textInput("beds", "Beds", NULL ),
       
-      checkboxInput("amenity42", "lock_on_bedroom_door", FALSE),
-      checkboxInput("amenity5", "ac", FALSE),
-      checkboxInput("amenity116", "bedroom_wide_doorway", FALSE),
-      checkboxInput("amenity44", "hangers", FALSE),
-      checkboxInput("amenity1", "tv", FALSE),
-      checkboxInput("amenity37", "first_aid_kit", FALSE),
-      checkboxInput("amenity25", "jacuzzi", FALSE),
-      checkboxInput("amenity66", "childrens_books_and_toys", FALSE),
-      checkboxInput("amenity113", "path_to_entrance_lit_at_night", FALSE),
-      checkboxInput("amenity9", "free_parking", FALSE),
-      checkboxInput("amenity33", "washer", FALSE),
-      checkboxInput("amenity2", "cable", FALSE),
+      checkboxInput("amenity42", "Lock on bedroom door", FALSE),
+      checkboxInput("amenity5", "Air conditioning", FALSE),
+      checkboxInput("amenity116", "Bedroom wide doorway", FALSE),
+      checkboxInput("amenity44", "Hangers", FALSE),
+      checkboxInput("amenity1", "TV", FALSE),
+      checkboxInput("amenity37", "First aid kit", FALSE),
+      checkboxInput("amenity25", "Jacuzzi", FALSE),
+      checkboxInput("amenity66", "Childrens books and toys", FALSE),
+      checkboxInput("amenity113", "Path to entrance lit at night", FALSE),
+      checkboxInput("amenity9", "Free parking", FALSE),
+      checkboxInput("amenity33", "Washing machine", FALSE),
+      checkboxInput("amenity2", "Cable", FALSE),
+      br(),
       
-      actionButton("predictButton", "Predict")
+      actionButton("predictButton", "Predict my price")
     ),
     
     mainPanel(
@@ -45,9 +48,11 @@ ui <- fluidPage(
       textOutput(outputId = "listingPriceDT"),
       h5("Amenities Decision Tree Output:"),
       textOutput(outputId = "amenityPriceDT"),
-      h4("ensemble predicion:"),
+      br(),
+      h4("Ensemble Prediction:"),
       textOutput(outputId = "ensemblePrice"),
-      h5("naive distence:"),
+      br(),
+      h5("Naive Distance:"),
       textOutput(outputId = "distancePrice")
     )
   )
@@ -214,7 +219,7 @@ server <- function(input, output){
   
   predictDistance <- eventReactive(input$predictButton, {
     prediction <- distancPredition(input)
-    paste("found mean price:", mean(prediction[,'price'], na.rm = T), " with distance ", mean(prediction[,'distance'], na.rm = T), ". min: ", min(prediction[,'price'], na.rm = T), "  max: ", max(prediction[,'price'], na.rm = T), sep = "")
+    paste("Found mean price: ", mean(prediction[,'price'], na.rm = T), " with distance ", mean(prediction[,'distance'], na.rm = T), ". Min: ", min(prediction[,'price'], na.rm = T), "  Max: ", max(prediction[,'price'], na.rm = T), sep = "")
   })
   
   output$distancePrice <- renderText(
